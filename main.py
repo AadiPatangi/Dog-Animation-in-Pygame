@@ -35,21 +35,21 @@ while True: #the main game loop
     DISPLAYSURF.blit(textSurfaceObj, textRectObj)
 
     if direction == "right":
-        dogx += 5
+        dogx += 10
         if dogx == 280:
-            direction = "down"
-        elif direction == "left":
+            direction = "up"
+    elif direction == "left":
             dogx -= 5   
-            if dogx == 10:
-                direction = "right"
-        elif direction == "down":
+            if dogx == 80:
+                direction = "down"
+    elif direction == "down":
           dogy -= 5
           if dogy == 10:
-            direction = "up"
-        elif direction == "up":
+            direction = "right"
+    elif direction == "up":
           dogy += 5
           if dogy == 280:
-            direction = "down"
+            direction = "left"
 
     #draw the image at point (x, y)
     DISPLAYSURF.blit(dog, (dogx, dogy)) #draws image at (10,10)
